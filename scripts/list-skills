@@ -1,0 +1,88 @@
+#!/usr/bin/env python3
+"""Enumerate Claude Skills by reading YAML front matter."""
+import json
+import os
+import sys
+from pathlib import Path
+
+DEFAULT_ROOT = Path(
+    os.environ.get("CODEX_SKILLS_DIR", str(Path.home() / ".codex/skills"))
+)
+
+
+def parse_front_matter(path: Path):
+    text = path.read_text(encoding="utf-8")
+    if not text.startswith("---"):
+        return {}
+    lines = iter(text.splitlines())
+    try:
+        first = next(lines)
+    except StopIteration:
+        return {}
+    if first.strip() != "---":
+        return {}
+    front_matter_lines = []
+    for line in lines:
+        if line.strip() == "---":
+            break
+        front_matter_lines.append(line.rstrip("\n"))
+    meta = {}
+    i = 0
+    while i < len(front_matter_lines):
+        line = front_matter_lines[i]
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            i += 1
+            continue
+        if not line.startswith(" ") and ":" in line:
+            key, value = line.split(":", 1)
+            key = key.strip()
+            value = value.strip()
+            if key == "allowed-tools":
+                tools = []
+                if value:
+                    tools = [v.strip() for v in value.split(",") if v.strip()]
+                else:
+                    j = i + 1
+                    while j < len(front_matter_lines):
+                        sub = front_matter_lines[j]
+                        if not sub.startswith("  - "):
+                            break
+                        tools.append(sub[4:].strip())
+                        j += 1
+                    i = j - 1
+                if tools:
+                    meta[key] = tools
+            else:
+                meta[key] = value
+        i += 1
+    return meta
+
+
+def collect_skills(root: Path):
+    skills = []
+    if not root.exists():
+        raise FileNotFoundError(f"missing skills dir: {root}")
+    for skill_file in sorted(root.rglob("SKILL.md")):
+        meta = parse_front_matter(skill_file)
+        name = meta.get("name")
+        description = meta.get("description")
+        if isinstance(name, str) and isinstance(description, str):
+            item = {"name": name, "description": description, "path": str(skill_file)}
+            allowed = meta.get("allowed-tools")
+            if isinstance(allowed, list) and allowed:
+                item["allowed-tools"] = allowed
+            skills.append(item)
+    skills.sort(key=lambda s: s["name"].lower())
+    return skills
+
+
+if __name__ == "__main__":
+    root = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_ROOT
+    try:
+        skills = collect_skills(root)
+    except FileNotFoundError as exc:
+        print(exc, file=sys.stderr)
+        sys.exit(1)
+    json.dump(skills, sys.stdout, ensure_ascii=False, indent=2)
+    sys.stdout.write("\n")
