@@ -6,6 +6,12 @@ const DOWNLOAD_LINK_ID = '#download-link';
 
 const DOCUMENTS = [
   {
+    id: 'field-guide',
+    label: 'Repository field guide',
+    path: '../docs/repository-field-guide.md',
+    downloadLabel: 'Download Field Guide Markdown'
+  },
+  {
     id: 'howto',
     label: 'Implementation playbook',
     path: '../docs/digital-product-team-howto.md',

@@ -4,6 +4,7 @@ Make Claude Skills first-class citizens in Codex CLI (and any other agent) with 
 
 ## Repository layout
 
+- [`docs/repository-field-guide.md`](docs/repository-field-guide.md) — step-by-step tour that orients new teams to the repo, skills catalog, and WhatsUp Logistics sample workspace.
 - [`docs/digital-product-team-howto.md`](docs/digital-product-team-howto.md) — end-to-end implementation guidance for digital product teams adopting Claude Skills.
 - [`scripts/list-skills`](scripts/list-skills) — standalone enumerator that emits a JSON array of skills by reading each `SKILL.md` front matter.
 - [`scripts/validate-skills`](scripts/validate-skills) — governance helper that checks metadata, naming, and directory alignment before merging changes.
@@ -55,8 +56,8 @@ Make Claude Skills first-class citizens in Codex CLI (and any other agent) with 
    ```bash
    # From the repository root
    python -m http.server 8000
- ```
-   Visit [http://localhost:8000/webapp/](http://localhost:8000/webapp/) to browse the full “digital-product-team-howto” with an interactive table of contents. The page automatically fetches the latest Markdown from `docs/digital-product-team-howto.md`, so the web view stays current as you update the guide.
+   ```
+   Visit [http://localhost:8000/webapp/](http://localhost:8000/webapp/) to browse the field guide, the implementation playbook, or the WhatsUp Logistics case study side by side. The page automatically fetches the latest Markdown from this repo, so the web view stays current as you update any guide.
 
  Customize or extend the skills directories to match your product rituals, then share the repository with your team.
 
