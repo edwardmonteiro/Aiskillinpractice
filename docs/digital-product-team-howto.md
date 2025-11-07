@@ -15,6 +15,7 @@ This guide shows how a modern product organization can integrate Claude Skills i
 | Claude Skills enumerator | Copy [`scripts/list-skills`](../scripts/list-skills) onto your PATH so agents can enumerate skills consistently across repositories. |
 | Skill definitions | Store reusable prompt snippets in `skills/<phase>/<skill>/SKILL.md` to align with Codex CLI expectations. |
 | Skills quality gate | Run [`scripts/validate-skills`](../scripts/validate-skills) locally and in CI to guarantee metadata quality as the catalog scales. |
+| MCP sample servers | Wire [`mcp/servers/*`](../mcp/README.md) into MCP-aware agents so Claude Skills stream directly into Windsurf, Claude Desktop, Devin, and beyond. |
 
 > **Tip:** Keep your enumerator script under version control so each role can add new skills without breaking existing automation.
 
@@ -150,6 +151,10 @@ Each phase bundles role-specific skills. The sections below outline responsibili
 - Use Claude to scope investigation tasks and acceptance criteria.
 
 **Delivery**
+- Skill: `delivery.mcp_session`
+- When to use: Immediately after the agent collaboration handshake to ensure MCP catalog + executor servers resolve for every participant.
+- Output: Session agenda, validation checklist, and follow-up notes saved to `samples/<initiative>/delivery/mcp_session.md`.
+- Reference: Follow the [MCP Integration Guide](mcp-integration-guide.md) for wiring sample servers into local and cloud agents.
 - Skill: `delivery.tech_spec`
 - Implementation checklist:
   1. Generate a baseline spec in `docs/specs/<feature>.md`.

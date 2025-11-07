@@ -6,7 +6,7 @@
         "inputs": {
             "product": "WhatsUp Logistics",
             "regions": [
-                "S\u00e3o Paulo",
+                "São Paulo",
                 "Rio de Janeiro",
                 "Belo Horizonte"
             ],
@@ -53,7 +53,7 @@
         "inputs": {
             "focus": "Missed delivery transparency",
             "cities": [
-                "S\u00e3o Paulo",
+                "São Paulo",
                 "Rio de Janeiro"
             ],
             "stakeholders": [
@@ -72,7 +72,7 @@
         "agent": "windsurf",
         "inputs": {
             "regions": [
-                "S\u00e3o Paulo",
+                "São Paulo",
                 "Rio de Janeiro"
             ],
             "channels": [
@@ -117,7 +117,7 @@
             "persona": "Dispatch supervisors and riders",
             "method": "WhatsApp contextual inquiry",
             "cities": [
-                "S\u00e3o Paulo",
+                "São Paulo",
                 "Rio de Janeiro"
             ]
         },
@@ -156,7 +156,7 @@
                 "WhatsApp"
             ],
             "regions": [
-                "S\u00e3o Paulo",
+                "São Paulo",
                 "Rio de Janeiro",
                 "Belo Horizonte"
             ]
@@ -327,7 +327,7 @@
                 "Q4 ML"
             ],
             "cities": [
-                "S\u00e3o Paulo",
+                "São Paulo",
                 "Rio",
                 "Belo Horizonte"
             ]
@@ -377,7 +377,7 @@
         "inputs": {
             "version": "2025.4.0",
             "rollout_plan": [
-                "S\u00e3o Paulo",
+                "São Paulo",
                 "Rio"
             ],
             "audience": [
@@ -461,7 +461,7 @@
         "timestamp": "2025-03-24T17:30:00Z",
         "agent": "windsurf",
         "inputs": {
-            "scope": "S\u00e3o Paulo & Rio pilot",
+            "scope": "São Paulo & Rio pilot",
             "attendees": [
                 "Product",
                 "Engineering",
@@ -481,7 +481,7 @@
             "incident_date": "2025-03-12",
             "impact": "WhatsApp outage",
             "cities": [
-                "S\u00e3o Paulo"
+                "São Paulo"
             ]
         },
         "outputs": [
@@ -503,5 +503,31 @@
         "outputs": [
             "governance/skill_release.md"
         ]
+    },
+    {
+        "skill": "delivery.mcp_session",
+        "timestamp": "2025-03-24T18:45:00Z",
+        "agent": "claude-desktop",
+        "inputs": {
+            "initiative": "whatsup-logistics",
+            "catalog_server": "uvx --from path ./mcp/servers/skills_catalog/server.py",
+            "executor_server": "uvx --from path ./mcp/servers/skill_executor/server.py",
+            "agents": [
+                "windsurf",
+                "claude-desktop",
+                "devin"
+            ],
+            "scope": [
+                "delivery.tech_spec",
+                "samples/whatsup-logistics/delivery/mcp_session.md"
+            ],
+            "validation_commands": [
+                "scripts/validate-skills"
+            ]
+        },
+        "outputs": {
+            "artifact": "samples/whatsup-logistics/delivery/mcp_session.md",
+            "notes": "Confirmed MCP discovery + execution across agents; stored summary in SDD."
+        }
     }
 ]

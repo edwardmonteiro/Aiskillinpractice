@@ -38,6 +38,7 @@ The scenario demonstrates how every skill in `skills/` contributes to a cohesive
 | Delivery | `delivery.tech_spec` | [`delivery/tech_spec.md`](../../samples/whatsup-logistics/delivery/tech_spec.md) | System design for location ingestion, WhatsApp automation, and dispatcher UI.
 | Delivery | `delivery.test_plan` | [`delivery/test_plan.md`](../../samples/whatsup-logistics/delivery/test_plan.md) | Manual and automated validation plan.
 | Delivery | `delivery.release_notes` | [`delivery/release_notes.md`](../../samples/whatsup-logistics/delivery/release_notes.md) | Launch comms for pilot with Rio de Janeiro couriers.
+| Delivery | `delivery.mcp_session` | [`delivery/mcp_session.md`](../../samples/whatsup-logistics/delivery/mcp_session.md) | MCP connection summary bridging Windsurf, Claude Desktop, and Devin.
 | Optimization | `optimization.metric_review` | [`optimization/metric_review.md`](../../samples/whatsup-logistics/optimization/metric_review.md) | Weekly metrics digest for delivery performance.
 | Optimization | `optimization.quality_report` | [`optimization/quality_report.md`](../../samples/whatsup-logistics/optimization/quality_report.md) | Quality checks for data accuracy and WhatsApp response times.
 | Optimization | `optimization.experiment_brief` | [`optimization/experiment_brief.md`](../../samples/whatsup-logistics/optimization/experiment_brief.md) | Experiment to compare proactive vs. reactive driver nudges.
@@ -77,4 +78,5 @@ Teams can fork the repository, replicate the log schema, and enforce reviews on 
 - Align your own dispatcher tooling, compliance checks, and agent collaboration procedures with the templates provided here.
 - Extend the skill catalog with localized prompts (e.g., multilingual support for Spanish and Portuguese) and create governance briefs whenever you add or modify a skill.
 - Keep the web guide (`webapp/`) updated so stakeholders across multiple teams can browse the evolving playbook and case studies.
+- Register the sample MCP servers (`mcp/servers/*`) with your IDE and cloud agents so they can reuse the catalog and executor capabilities without manual setup.
 

@@ -6,10 +6,13 @@ Make Claude Skills first-class citizens in Codex CLI (and any other agent) with 
 
 - [`docs/repository-field-guide.md`](docs/repository-field-guide.md) — step-by-step tour that orients new teams to the repo, skills catalog, and WhatsUp Logistics sample workspace.
 - [`docs/digital-product-team-howto.md`](docs/digital-product-team-howto.md) — end-to-end implementation guidance for digital product teams adopting Claude Skills.
+- [`docs/mcp-integration-guide.md`](docs/mcp-integration-guide.md) — walkthrough for wiring the sample MCP servers into Claude Desktop, Windsurf, Devin, and other agents.
 - [`scripts/list-skills`](scripts/list-skills) — standalone enumerator that emits a JSON array of skills by reading each `SKILL.md` front matter.
 - [`scripts/validate-skills`](scripts/validate-skills) — governance helper that checks metadata, naming, and directory alignment before merging changes.
 - [`skills/`](skills) — lifecycle-organized skills (`discovery`, `definition`, `delivery`, `optimization`) with one directory per skill and a `SKILL.md` definition (including `delivery.agent_collaboration` for coordinating Windsurf-style local agents with Devin-style cloud agents).
 - [`skills/governance/skill_release`](skills/governance/skill_release/SKILL.md) — guidance for shipping versioned updates to the skills catalog across multiple squads.
+- [`skills/delivery/mcp_session`](skills/delivery/mcp_session/SKILL.md) — aligns Claude Skills with MCP servers so agents share the same context before implementation.
+- [`mcp/`](mcp) — sample Model Context Protocol servers and manifests exposing the skills catalog and automation commands.
 - [`specs/`](specs) — AI-first software design workspace aligned with github/spec-kit, including templates and project SDDs that link directly to delivery skills.
 - [`samples/whatsup-logistics/`](samples/whatsup-logistics) — end-to-end WhatsApp-native delivery application demonstrating every skill in action with saved artifacts and invocation logs.
 - [`webapp/`](webapp) — lightweight site that renders the full implementation guide with navigation, search, and download actions for sharing across the company.
@@ -44,7 +47,17 @@ Make Claude Skills first-class citizens in Codex CLI (and any other agent) with 
    ```
    Capture the handshake output under `specs/projects/<initiative>/sdd.md` so both perspectives reuse the same Claude skills and guardrails.
 
-5. **Author AI-first SDDs**
+5. **Bridge Claude Skills with MCP**
+   ```bash
+   codex skills run delivery.mcp_session --vars \
+     "initiative=unified-insights" \
+     "catalog_server=uvx --from path ./mcp/servers/skills_catalog/server.py" \
+     "executor_server=uvx --from path ./mcp/servers/skill_executor/server.py" \
+     "agents=Windsurf, Claude Desktop, Devin"
+   ```
+   Follow the checklist to ensure every agent can load the same skills via MCP before coding.
+
+6. **Author AI-first SDDs**
    ```bash
    codex skills run delivery.ai_delivery_sdd --vars "feature=Unified release dashboard" \
      "objectives=Increase release confidence" \
@@ -52,12 +65,12 @@ Make Claude Skills first-class citizens in Codex CLI (and any other agent) with 
    ```
    Save the output under `specs/projects/<initiative>/` using the provided template so engineers and AI collaborators stay aligned.
 
-6. **Share the guide via the web app**
+7. **Share the guide via the web app**
    ```bash
    # From the repository root
    python -m http.server 8000
    ```
-   Visit [http://localhost:8000/webapp/](http://localhost:8000/webapp/) to browse the field guide, the implementation playbook, or the WhatsUp Logistics case study side by side. The page automatically fetches the latest Markdown from this repo, so the web view stays current as you update any guide.
+   Visit [http://localhost:8000/webapp/](http://localhost:8000/webapp/) to browse the field guide, the implementation playbook, the MCP integration guide, or the WhatsUp Logistics case study side by side. The page automatically fetches the latest Markdown from this repo, so the web view stays current as you update any guide.
 
  Customize or extend the skills directories to match your product rituals, then share the repository with your team.
 

@@ -22,6 +22,12 @@ const DOCUMENTS = [
     label: 'WhatsUp Logistics case study',
     path: '../docs/case-studies/whatsup-logistics.md',
     downloadLabel: 'Download Case Study Markdown'
+  },
+  {
+    id: 'mcp-guide',
+    label: 'MCP integration guide',
+    path: '../docs/mcp-integration-guide.md',
+    downloadLabel: 'Download MCP Guide Markdown'
   }
 ];
 

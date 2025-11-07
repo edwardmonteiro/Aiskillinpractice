@@ -37,6 +37,7 @@ objectives: Increase on-time delivery to 95%, reduce manual dispatcher workload 
 | Skill | When to run | Required variables | Expected artifact |
 | ----- | ----------- | ------------------ | ----------------- |
 | delivery.agent_collaboration | Before parallelizing work across agents | initiative="WhatsUp WhatsApp tracker", local_agent="Windsurf", cloud_agent="Devin", repo_path="Aiskillinpractice" | Charter stored at `samples/whatsup-logistics/delivery/agent_collaboration.md` |
+| delivery.mcp_session | After confirming delivery collaborators | initiative="WhatsUp WhatsApp tracker", catalog_server, executor_server, agents | `samples/whatsup-logistics/delivery/mcp_session.md` |
 | delivery.tech_spec | Kickoff architecture | feature, objectives, constraints | `samples/whatsup-logistics/delivery/tech_spec.md` |
 | delivery.dashboard_brief | Prior to dashboard build | dashboard_name, stakeholders, metrics | `samples/whatsup-logistics/delivery/dashboard_brief.md` |
 | delivery.test_plan | Before QA freeze | feature, risk_profile, environments | `samples/whatsup-logistics/delivery/test_plan.md` |
@@ -60,6 +61,7 @@ objectives: Increase on-time delivery to 95%, reduce manual dispatcher workload 
 - **Telemetry**: Collect message latency, driver opt-in rates, stall detection precision; feed into Datadog dashboards defined in [`dashboard_brief.md`](../../samples/whatsup-logistics/delivery/dashboard_brief.md).
 - **Success review**: Weekly meeting across Ops, Product, Engineering to review metrics vs. OKRs; monthly retrospective captured in [`optimization/retrospective.md`](../../samples/whatsup-logistics/optimization/retrospective.md).
 - **Agent handshake**: Windsurf handles repo commits, Devin manages load testing and vendor integrations. Handoffs logged in `skill-run-log.json` per [`agent_collaboration.md`](../../samples/whatsup-logistics/delivery/agent_collaboration.md).
+- **MCP alignment**: Catalog + executor servers recorded in [`mcp_session.md`](../../samples/whatsup-logistics/delivery/mcp_session.md); configuration snapshots stored under `mcp/servers/*` for reproducibility.
 
 # Appendices
 - **API references**: Meta WhatsApp Business Cloud API, Twilio WhatsApp, Google Maps Directions & Roads APIs.
