@@ -1,0 +1,33 @@
+#!/usr/bin/env python3
+"""Enumerate Claude Skills by reading YAML front matter."""
+import json
+import os
+import sys
+from pathlib import Path
+
+from _skills_utils import load_skill_records
+
+DEFAULT_ROOT = Path(
+    os.environ.get("CODEX_SKILLS_DIR", str(Path.home() / ".codex/skills"))
+)
+
+
+if __name__ == "__main__":
+    root = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_ROOT
+    if not root.exists():
+        print(f"missing skills dir: {root}", file=sys.stderr)
+        sys.exit(1)
+
+    records = load_skill_records(root)
+    payload = []
+    for record in records:
+        item = {
+            "name": record.name,
+            "description": record.description,
+            "path": str(record.path),
+        }
+        if record.allowed_tools:
+            item["allowed-tools"] = record.allowed_tools
+        payload.append(item)
+    json.dump(payload, sys.stdout, ensure_ascii=False, indent=2)
+    sys.stdout.write("\n")

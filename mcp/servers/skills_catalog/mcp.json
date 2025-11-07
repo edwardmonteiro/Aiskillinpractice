@@ -1,0 +1,13 @@
+{
+  "name": "Claude Skills Catalog",
+  "description": "Exposes the Aiskillinpractice Claude Skills directory as MCP resources, prompts, and tools.",
+  "command": [
+    "uvx",
+    "--from",
+    "path",
+    "./mcp/servers/skills_catalog/server.py"
+  ],
+  "env": {
+    "AISKILLIN_SKILLS_DIR": "${WORKSPACE_ROOT}/skills"
+  }
+}

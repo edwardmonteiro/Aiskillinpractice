@@ -1,0 +1,533 @@
+[
+    {
+        "skill": "discovery.data_audit",
+        "timestamp": "2025-03-24T14:05:00Z",
+        "agent": "windsurf",
+        "inputs": {
+            "product": "WhatsUp Logistics",
+            "regions": [
+                "São Paulo",
+                "Rio de Janeiro",
+                "Belo Horizonte"
+            ],
+            "systems": [
+                "WhatsApp Business API",
+                "PostgreSQL order db",
+                "GPS broker"
+            ],
+            "compliance_requirements": [
+                "LGPD",
+                "ANATEL"
+            ]
+        },
+        "outputs": [
+            "discovery/data_audit.md"
+        ]
+    },
+    {
+        "skill": "discovery.market_scan",
+        "timestamp": "2025-03-24T14:30:00Z",
+        "agent": "devin",
+        "inputs": {
+            "region": "Brazil",
+            "competitors": [
+                "Loggi",
+                "99Entrega",
+                "Rappi"
+            ],
+            "channels": [
+                "WhatsApp",
+                "SMS",
+                "In-app"
+            ],
+            "research_window": "2024"
+        },
+        "outputs": [
+            "discovery/market_scan.md"
+        ]
+    },
+    {
+        "skill": "discovery.problem_framing",
+        "timestamp": "2025-03-24T14:45:00Z",
+        "agent": "windsurf",
+        "inputs": {
+            "focus": "Missed delivery transparency",
+            "cities": [
+                "São Paulo",
+                "Rio de Janeiro"
+            ],
+            "stakeholders": [
+                "Dispatch",
+                "Drivers",
+                "Customers"
+            ]
+        },
+        "outputs": [
+            "discovery/problem_framing.md"
+        ]
+    },
+    {
+        "skill": "discovery.risk_assessment",
+        "timestamp": "2025-03-24T15:10:00Z",
+        "agent": "windsurf",
+        "inputs": {
+            "regions": [
+                "São Paulo",
+                "Rio de Janeiro"
+            ],
+            "channels": [
+                "WhatsApp"
+            ],
+            "compliance": [
+                "LGPD",
+                "ANATEL"
+            ],
+            "dependencies": [
+                "Meta Cloud API",
+                "Google Maps Platform"
+            ]
+        },
+        "outputs": [
+            "discovery/risk_assessment.md"
+        ]
+    },
+    {
+        "skill": "discovery.tech_landscape",
+        "timestamp": "2025-03-24T15:20:00Z",
+        "agent": "devin",
+        "inputs": {
+            "focus": "WhatsApp driver tracking",
+            "providers": [
+                "Meta",
+                "Twilio",
+                "Google Maps",
+                "Mapbox",
+                "AWS"
+            ]
+        },
+        "outputs": [
+            "discovery/tech_landscape.md"
+        ]
+    },
+    {
+        "skill": "discovery.user_research",
+        "timestamp": "2025-03-24T15:40:00Z",
+        "agent": "windsurf",
+        "inputs": {
+            "persona": "Dispatch supervisors and riders",
+            "method": "WhatsApp contextual inquiry",
+            "cities": [
+                "São Paulo",
+                "Rio de Janeiro"
+            ]
+        },
+        "outputs": [
+            "discovery/user_research.md"
+        ]
+    },
+    {
+        "skill": "definition.value_proposition",
+        "timestamp": "2025-03-24T16:05:00Z",
+        "agent": "windsurf",
+        "inputs": {
+            "segments": [
+                "Enterprise retailers",
+                "Regional grocers",
+                "Courier cooperatives"
+            ],
+            "differentiators": [
+                "WhatsApp-first",
+                "Predictive delays",
+                "Driver-friendly",
+                "Skill governance"
+            ]
+        },
+        "outputs": [
+            "definition/value_proposition.md"
+        ]
+    },
+    {
+        "skill": "definition.metric_catalog",
+        "timestamp": "2025-03-24T16:10:00Z",
+        "agent": "devin",
+        "inputs": {
+            "primary_goal": "Increase SLA adherence",
+            "channels": [
+                "WhatsApp"
+            ],
+            "regions": [
+                "São Paulo",
+                "Rio de Janeiro",
+                "Belo Horizonte"
+            ]
+        },
+        "outputs": [
+            "definition/metric_catalog.md"
+        ]
+    },
+    {
+        "skill": "definition.story_map",
+        "timestamp": "2025-03-24T16:15:00Z",
+        "agent": "windsurf",
+        "inputs": {
+            "personas": [
+                "Dispatcher",
+                "Driver",
+                "Customer"
+            ],
+            "activities": [
+                "Schedule deliveries",
+                "Monitor progress",
+                "Confirm completion"
+            ]
+        },
+        "outputs": [
+            "definition/story_map.md"
+        ]
+    },
+    {
+        "skill": "definition.okr_drafting",
+        "timestamp": "2025-03-24T16:20:00Z",
+        "agent": "windsurf",
+        "inputs": {
+            "objective": "WhatsApp-native driver tracking",
+            "quarter": "Q2 2025",
+            "key_results": [
+                "On-time 95%",
+                "Check-ins 2/hour",
+                "CSAT 80%",
+                "PIX <24h"
+            ]
+        },
+        "outputs": [
+            "definition/okr_drafting.md"
+        ]
+    },
+    {
+        "skill": "definition.tech_spike",
+        "timestamp": "2025-03-24T16:25:00Z",
+        "agent": "windsurf",
+        "inputs": {
+            "question": "Best live location streaming approach",
+            "providers": [
+                "Meta Cloud API",
+                "Twilio"
+            ],
+            "risks": [
+                "Offline caching",
+                "Latency"
+            ]
+        },
+        "outputs": [
+            "definition/tech_spike.md"
+        ]
+    },
+    {
+        "skill": "definition.test_strategy",
+        "timestamp": "2025-03-24T16:28:00Z",
+        "agent": "devin",
+        "inputs": {
+            "pillars": [
+                "Conversational",
+                "Location",
+                "Performance",
+                "Compliance"
+            ],
+            "channels": [
+                "WhatsApp"
+            ],
+            "regions": [
+                "Brazil"
+            ]
+        },
+        "outputs": [
+            "definition/test_strategy.md"
+        ]
+    },
+    {
+        "skill": "delivery.agent_collaboration",
+        "timestamp": "2025-03-24T16:32:00Z",
+        "agent": "windsurf",
+        "inputs": {
+            "initiative": "WhatsUp WhatsApp tracker",
+            "local_agent": "Windsurf",
+            "cloud_agent": "Devin"
+        },
+        "outputs": [
+            "delivery/agent_collaboration.md"
+        ]
+    },
+    {
+        "skill": "delivery.ai_delivery_sdd",
+        "timestamp": "2025-03-24T16:35:00Z",
+        "agent": "windsurf",
+        "inputs": {
+            "feature": "WhatsApp driver tracking",
+            "objectives": [
+                "Improve SLA",
+                "Reduce workload"
+            ],
+            "architecture_context": [
+                "Meta Cloud API",
+                "AWS",
+                "Kinesis",
+                "Next.js"
+            ]
+        },
+        "outputs": [
+            "delivery/ai_delivery_sdd.md",
+            "../specs/projects/whatsup-logistics/sdd.md"
+        ]
+    },
+    {
+        "skill": "delivery.dashboard_brief",
+        "timestamp": "2025-03-24T16:40:00Z",
+        "agent": "windsurf",
+        "inputs": {
+            "dashboard_name": "Dispatcher control tower",
+            "stakeholders": [
+                "Dispatch",
+                "Ops leadership",
+                "Support"
+            ],
+            "metrics": [
+                "SLA adherence",
+                "Latency",
+                "Incidents"
+            ]
+        },
+        "outputs": [
+            "delivery/dashboard_brief.md"
+        ]
+    },
+    {
+        "skill": "delivery.design_review",
+        "timestamp": "2025-03-24T16:45:00Z",
+        "agent": "windsurf",
+        "inputs": {
+            "feature": "WhatsApp flows",
+            "principles": [
+                "Clarity",
+                "Localization",
+                "Accessibility"
+            ]
+        },
+        "outputs": [
+            "delivery/design_review.md"
+        ]
+    },
+    {
+        "skill": "delivery.roadmap",
+        "timestamp": "2025-03-24T16:50:00Z",
+        "agent": "devin",
+        "inputs": {
+            "horizons": [
+                "Q2 pilot",
+                "Q3 expansion",
+                "Q4 ML"
+            ],
+            "cities": [
+                "São Paulo",
+                "Rio",
+                "Belo Horizonte"
+            ]
+        },
+        "outputs": [
+            "delivery/roadmap.md"
+        ]
+    },
+    {
+        "skill": "delivery.tech_spec",
+        "timestamp": "2025-03-24T16:55:00Z",
+        "agent": "windsurf",
+        "inputs": {
+            "feature": "Driver tracking system",
+            "objectives": [
+                "Realtime visibility",
+                "Low latency"
+            ],
+            "constraints": [
+                "LGPD",
+                "WhatsApp throughput"
+            ]
+        },
+        "outputs": [
+            "delivery/tech_spec.md"
+        ]
+    },
+    {
+        "skill": "delivery.test_plan",
+        "timestamp": "2025-03-24T17:00:00Z",
+        "agent": "devin",
+        "inputs": {
+            "environments": [
+                "Staging",
+                "Production"
+            ],
+            "risk_profile": "High availability"
+        },
+        "outputs": [
+            "delivery/test_plan.md"
+        ]
+    },
+    {
+        "skill": "delivery.release_notes",
+        "timestamp": "2025-03-24T17:05:00Z",
+        "agent": "windsurf",
+        "inputs": {
+            "version": "2025.4.0",
+            "rollout_plan": [
+                "São Paulo",
+                "Rio"
+            ],
+            "audience": [
+                "Dispatch",
+                "Support",
+                "Drivers"
+            ]
+        },
+        "outputs": [
+            "delivery/release_notes.md"
+        ]
+    },
+    {
+        "skill": "optimization.metric_review",
+        "timestamp": "2025-03-24T17:10:00Z",
+        "agent": "devin",
+        "inputs": {
+            "week_of": "2025-05-19",
+            "metrics": [
+                "On-Time Delivery",
+                "WhatsApp Engagement",
+                "Latency",
+                "Availability",
+                "Support volume"
+            ]
+        },
+        "outputs": [
+            "optimization/metric_review.md"
+        ]
+    },
+    {
+        "skill": "optimization.quality_report",
+        "timestamp": "2025-03-24T17:15:00Z",
+        "agent": "windsurf",
+        "inputs": {
+            "period": "2025-05-12_to_2025-05-18",
+            "checks": [
+                "GPS",
+                "Messaging",
+                "Templates",
+                "Retention",
+                "PIX"
+            ]
+        },
+        "outputs": [
+            "optimization/quality_report.md"
+        ]
+    },
+    {
+        "skill": "optimization.experiment_brief",
+        "timestamp": "2025-03-24T17:20:00Z",
+        "agent": "windsurf",
+        "inputs": {
+            "hypothesis": "Proactive nudges reduce SLA breaches",
+            "population": 600,
+            "duration_weeks": 4
+        },
+        "outputs": [
+            "optimization/experiment_brief.md"
+        ]
+    },
+    {
+        "skill": "optimization.experiment_analysis",
+        "timestamp": "2025-03-24T17:25:00Z",
+        "agent": "devin",
+        "inputs": {
+            "experiment_id": "EXP-2025-07",
+            "metrics": [
+                "SLA Breach",
+                "Interventions",
+                "Satisfaction",
+                "Engagement"
+            ]
+        },
+        "outputs": [
+            "optimization/experiment_analysis.md"
+        ]
+    },
+    {
+        "skill": "optimization.retrospective",
+        "timestamp": "2025-03-24T17:30:00Z",
+        "agent": "windsurf",
+        "inputs": {
+            "scope": "São Paulo & Rio pilot",
+            "attendees": [
+                "Product",
+                "Engineering",
+                "Ops",
+                "Support"
+            ]
+        },
+        "outputs": [
+            "optimization/retrospective.md"
+        ]
+    },
+    {
+        "skill": "optimization.postmortem",
+        "timestamp": "2025-03-24T17:35:00Z",
+        "agent": "windsurf",
+        "inputs": {
+            "incident_date": "2025-03-12",
+            "impact": "WhatsApp outage",
+            "cities": [
+                "São Paulo"
+            ]
+        },
+        "outputs": [
+            "optimization/postmortem.md"
+        ]
+    },
+    {
+        "skill": "governance.skill_release",
+        "timestamp": "2025-03-24T17:40:00Z",
+        "agent": "windsurf",
+        "inputs": {
+            "skills": [
+                "delivery.tech_spec",
+                "delivery.test_plan",
+                "delivery.agent_collaboration"
+            ],
+            "version": "2025.03-WA"
+        },
+        "outputs": [
+            "governance/skill_release.md"
+        ]
+    },
+    {
+        "skill": "delivery.mcp_session",
+        "timestamp": "2025-03-24T18:45:00Z",
+        "agent": "claude-desktop",
+        "inputs": {
+            "initiative": "whatsup-logistics",
+            "catalog_server": "uvx --from path ./mcp/servers/skills_catalog/server.py",
+            "executor_server": "uvx --from path ./mcp/servers/skill_executor/server.py",
+            "agents": [
+                "windsurf",
+                "claude-desktop",
+                "devin"
+            ],
+            "scope": [
+                "delivery.tech_spec",
+                "samples/whatsup-logistics/delivery/mcp_session.md"
+            ],
+            "validation_commands": [
+                "scripts/validate-skills"
+            ]
+        },
+        "outputs": {
+            "artifact": "samples/whatsup-logistics/delivery/mcp_session.md",
+            "notes": "Confirmed MCP discovery + execution across agents; stored summary in SDD."
+        }
+    }
+]
