@@ -1,0 +1,116 @@
+#!/usr/bin/env python3
+"""Validate Claude Skills metadata for multi-team governance."""
+import argparse
+import sys
+from collections import Counter
+from pathlib import Path
+from typing import List, Tuple
+
+from _skills_utils import load_skill_records, read_front_matter
+
+REQUIRED_FIELDS = ("name", "phase", "description", "roles")
+
+
+def _validate_required_fields(meta: dict, skill_path: Path) -> List[str]:
+    errors: List[str] = []
+    for field in REQUIRED_FIELDS:
+        value = meta.get(field)
+        if field == "roles":
+            if not isinstance(value, list) or not value or not all(
+                isinstance(item, str) and item.strip() for item in value
+            ):
+                errors.append(f"{field} must be a non-empty list of strings")
+        else:
+            if not isinstance(value, str) or not value.strip():
+                errors.append(f"{field} must be a non-empty string")
+    if errors:
+        prefix = f"{skill_path.relative_to(skill_path.parents[2])}:"
+        return [f"{prefix} {msg}" for msg in errors]
+    return []
+
+
+def _validate_phase_alignment(meta: dict, skill_path: Path) -> List[str]:
+    errors: List[str] = []
+    try:
+        phase_folder = skill_path.relative_to(skill_path.parents[2]).parts[0]
+    except ValueError:
+        phase_folder = None
+    declared_phase = meta.get("phase")
+    if phase_folder and isinstance(declared_phase, str):
+        if declared_phase.strip() != phase_folder:
+            rel = skill_path.relative_to(skill_path.parents[2])
+            errors.append(
+                f"{rel}: phase '{declared_phase}' does not match directory '{phase_folder}'"
+            )
+    return errors
+
+
+def _validate_skill_identity(meta: dict, skill_path: Path) -> List[str]:
+    rel = skill_path.relative_to(skill_path.parents[2])
+    expected_slug = ".".join(rel.parts[:-1])
+    name = meta.get("name")
+    if isinstance(name, str) and expected_slug and name != expected_slug:
+        return [f"{rel}: name '{name}' should equal '{expected_slug}'"]
+    return []
+
+
+def _validate_variables(meta: dict, skill_path: Path) -> List[str]:
+    variables = meta.get("variables")
+    if not variables:
+        return []
+    errors: List[str] = []
+    for category in ("required", "optional"):
+        if category in variables:
+            items = variables[category]
+            if not isinstance(items, list):
+                rel = skill_path.relative_to(skill_path.parents[2])
+                errors.append(f"{rel}: variables.{category} must be a list")
+                continue
+            for item in items:
+                if not isinstance(item, dict):
+                    rel = skill_path.relative_to(skill_path.parents[2])
+                    errors.append(f"{rel}: variables.{category} entries must be mappings")
+                    break
+                if "name" not in item or "description" not in item:
+                    rel = skill_path.relative_to(skill_path.parents[2])
+                    errors.append(
+                        f"{rel}: variables.{category} entries must contain 'name' and 'description'"
+                    )
+                    break
+    return errors
+
+
+def validate_skills(root: Path) -> Tuple[bool, List[str]]:
+    records = load_skill_records(root)
+    errors: List[str] = []
+    if not records:
+        return False, [f"no skills found under {root}"]
+
+    # Detect duplicate names
+    counts = Counter(record.name for record in records)
+    duplicates = [name for name, count in counts.items() if count > 1]
+    if duplicates:
+        errors.extend(f"duplicate skill name: {name}" for name in sorted(duplicates))
+
+    for record in records:
+        meta = read_front_matter(record.path)
+        errors.extend(_validate_required_fields(meta, record.path))
+        errors.extend(_validate_phase_alignment(meta, record.path))
+        errors.extend(_validate_skill_identity(meta, record.path))
+        errors.extend(_validate_variables(meta, record.path))
+
+    return not errors, errors
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("root", nargs="?", default="skills", help="Root skills directory")
+    args = parser.parse_args()
+    root = Path(args.root)
+
+    ok, messages = validate_skills(root)
+    if not ok:
+        for message in messages:
+            print(f"ERROR: {message}")
+        sys.exit(1)
+    print(f"Validated {len(load_skill_records(root))} skills under {root}")
