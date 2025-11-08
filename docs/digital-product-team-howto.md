@@ -251,7 +251,9 @@ Each phase bundles role-specific skills. The sections below outline responsibili
      format.
    - Embed variable placeholders (`{{product}}`, `{{persona}}`) to enforce consistency.
    - Pair new skills with both local and cloud agent workflows. For example, add `delivery.agent_collaboration` so Windsurf-based contributors and Devin automation runs share the same assumptions about repositories, branches, and safeguards.
-   - Append a `Toolchain & Integrations` section after each invocation block so contributors know which Python CLIs, external APIs, or MCP servers support the skill in practice.
+   - Append `Toolchain & Integrations`, `Human Layer: Reflective Practice`, and `Critical Thinking Loop` sections after each
+     invocation block so contributors know which Python CLIs, external APIs, MCP servers, and mindset prompts support the skill
+     in practice.
 4. **Publish team-specific templates**
    - Check in sample commands in `docs/playbooks/` so each role has a starting point.
    - Encourage contributions through pull requests to maintain quality and traceability.

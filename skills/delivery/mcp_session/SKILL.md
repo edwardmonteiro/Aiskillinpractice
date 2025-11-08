@@ -67,6 +67,15 @@ codex skills run delivery.mcp_session \
 - **Transcript hygiene**: Store MCP session transcripts or console output in `specs/projects/{{initiative}}/ai/` for future audits.
 - **Run log updates**: Append new entries to `samples/{{initiative}}/skill-run-log.json` capturing that a session bridged Claude Skills with MCP tooling.
 
+
+# Human Layer: Reflective Practice
+- **Metacognitive check-ins**: Pause after each major section to confirm the prompt is still solving the right problem and that the audience's needs are clearly addressed.
+- **Emotional awareness**: Note any stakeholder sensitivities, preferred communication styles, or cultural cues so the narrative lands with empathy.
+
+# Critical Thinking Loop
+- **Audience resonance scan**: Anticipate how partner teams will receive this artifact; adjust emphasis or tone if something could trigger confusion or resistance.
+- **Adaptive strategy**: If new insights emerge mid-draft, revisit the goal or success criteria and revise the approach instead of forcing the original plan.
+
 # Follow-up Checklist
 - [ ] Upload the generated session summary to `samples/{{initiative}}/delivery/mcp_session.md`.
 - [ ] Update the initiative SDD with MCP setup details in the "Skills Bridge" section.

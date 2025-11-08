@@ -78,6 +78,15 @@ codex skills run definition.okr_drafting \
 - Owner:
 ```
 
+
+# Human Layer: Reflective Practice
+- **Metacognitive check-ins**: Pause after each major section to confirm the prompt is still solving the right problem and that the audience's needs are clearly addressed.
+- **Emotional awareness**: Note any stakeholder sensitivities, preferred communication styles, or cultural cues so the narrative lands with empathy.
+
+# Critical Thinking Loop
+- **Audience resonance scan**: Anticipate how partner teams will receive this artifact; adjust emphasis or tone if something could trigger confusion or resistance.
+- **Adaptive strategy**: If new insights emerge mid-draft, revisit the goal or success criteria and revise the approach instead of forcing the original plan.
+
 # Follow-up Actions
 - Review draft OKRs with cross-functional leadership for calibration.
 - Translate agreed initiatives into backlog epics with discovery tasks.
