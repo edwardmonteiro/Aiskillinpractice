@@ -9,12 +9,13 @@ Make Claude Skills first-class citizens in Codex CLI (and any other agent) with 
 - [`docs/mcp-integration-guide.md`](docs/mcp-integration-guide.md) — walkthrough for wiring the sample MCP servers into Claude Desktop, Windsurf, Devin, and other agents.
 - [`scripts/list-skills`](scripts/list-skills) — standalone enumerator that emits a JSON array of skills by reading each `SKILL.md` front matter.
 - [`scripts/validate-skills`](scripts/validate-skills) — governance helper that checks metadata, naming, and directory alignment before merging changes.
-- [`skills/`](skills) — lifecycle-organized skills (`discovery`, `definition`, `delivery`, `optimization`) with one directory per skill and a `SKILL.md` definition (including `delivery.agent_collaboration` for coordinating Windsurf-style local agents with Devin-style cloud agents). Every skill now includes `Toolchain & Integrations`, `Human Layer: Reflective Practice`, and `Critical Thinking Loop` sections so teams pair automation with self-awareness, emotional intelligence, and adaptive decision-making.
+- [`skills/`](skills) — lifecycle-organized skills (`discovery`, `definition`, `delivery`, `run`, `optimization`) with one directory per skill and a `SKILL.md` definition (including `delivery.agent_collaboration` for coordinating Windsurf-style local agents with Devin-style cloud agents). Every skill now includes `Toolchain & Integrations`, `Human Layer: Reflective Practice`, and `Critical Thinking Loop` sections so teams pair automation with self-awareness, emotional intelligence, and adaptive decision-making.
+- [`skills/run/service_runbook`](skills/run/service_runbook/SKILL.md) & [`skills/run/incident_response`](skills/run/incident_response/SKILL.md) — “build-and-run” guidance so squads maintain runbooks, on-call rituals, and real-time coordination once the product is live.
 - [`skills/governance/skill_release`](skills/governance/skill_release/SKILL.md) — guidance for shipping versioned updates to the skills catalog across multiple squads.
 - [`skills/delivery/mcp_session`](skills/delivery/mcp_session/SKILL.md) — aligns Claude Skills with MCP servers so agents share the same context before implementation.
 - [`mcp/`](mcp) — sample Model Context Protocol servers and manifests exposing the skills catalog and automation commands.
 - [`specs/`](specs) — AI-first software design workspace aligned with github/spec-kit, including templates and project SDDs that link directly to delivery skills.
-- [`samples/whatsup-logistics/`](samples/whatsup-logistics) — end-to-end WhatsApp-native delivery application demonstrating every skill in action with saved artifacts and invocation logs.
+- [`samples/whatsup-logistics/`](samples/whatsup-logistics) — end-to-end WhatsApp-native delivery application demonstrating every skill in action with saved artifacts and invocation logs (including new `run/` artifacts for operational readiness and incident response).
 - [`webapp/`](webapp) — lightweight site that renders the full implementation guide with navigation, search, and download actions for sharing across the company.
 
 ## Getting started
@@ -78,7 +79,7 @@ Make Claude Skills first-class citizens in Codex CLI (and any other agent) with 
 
 The `samples/whatsup-logistics/` directory and the companion case study in [`docs/case-studies/whatsup-logistics.md`](docs/case-studies/whatsup-logistics.md) show how to build a WhatsApp-native delivery tracking service for motorcycle couriers in Brazil:
 
-1. **Review artifacts by lifecycle** — Explore each subfolder (`discovery`, `definition`, `delivery`, `optimization`, `governance`) to see how every skill produces real outputs.
+1. **Review artifacts by lifecycle** — Explore each subfolder (`discovery`, `definition`, `delivery`, `run`, `optimization`, `governance`) to see how every skill produces real outputs.
 2. **Inspect the AI-first SDD** — Read [`specs/projects/whatsup-logistics/sdd.md`](specs/projects/whatsup-logistics/sdd.md) to understand how skills and spec-kit structure align for engineers and agents.
 3. **Replay skill runs** — Consult [`samples/whatsup-logistics/skill-run-log.json`](samples/whatsup-logistics/skill-run-log.json) for timestamps, variables, and agent ownership of each invocation.
 4. **Share via the webapp** — Use the updated web interface to switch between the primary how-to and the WhatsUp Logistics case study when onboarding new teams.

@@ -24,7 +24,7 @@ Everything in this repo revolves around a single source of truth—the `skills/`
 
 | Path | Contents | How to use it |
 | --- | --- | --- |
-| `skills/` | Lifecycle-organized Claude Skills (`discovery`, `definition`, `delivery`, `optimization`, `governance`) with one `SKILL.md` per skill. | Treat each `SKILL.md` like executable documentation. Update metadata first, then body. Keep changes versioned with Git branches and pull requests, and maintain the `Toolchain & Integrations`, `Human Layer`, and `Critical Thinking Loop` sections so collaborators know which scripts, mindsets, and adaptive moves accompany the prompt.
+| `skills/` | Lifecycle-organized Claude Skills (`discovery`, `definition`, `delivery`, `run`, `optimization`, `governance`) with one `SKILL.md` per skill. | Treat each `SKILL.md` like executable documentation. Update metadata first, then body. Keep changes versioned with Git branches and pull requests, and maintain the `Toolchain & Integrations`, `Human Layer`, and `Critical Thinking Loop` sections so collaborators know which scripts, mindsets, and adaptive moves accompany the prompt. |
 | `scripts/list-skills` | Enumerator script that agents run at startup to list skills without reading every file. | Copy onto your PATH, run it in CI, and pin to releases when the catalog evolves.
 | `scripts/validate-skills` & `scripts/_skills_utils.py` | Validation CLI plus helpers that enforce naming, directory alignment, and metadata structure. | Add to pre-commit hooks and CI pipelines. Block merges that fail validation.
 | `docs/digital-product-team-howto.md` | Deep-dive playbook covering lifecycle rituals, role playbooks, and detailed command samples. | Pair this with the web app for day-to-day reference when you need specifics about a phase or role.
@@ -74,11 +74,16 @@ Use the WhatsApp-native delivery tracker as a working example of every skill in 
 - Note how the handshake records responsibilities for Windsurf (local) and Devin (cloud) agents, ensuring they share the same Claude skills and spec context.
 - When MCP servers are in play, follow [`docs/mcp-integration-guide.md`](mcp-integration-guide.md) and run `delivery.mcp_session` to capture how catalog and executor servers are connected before implementation starts.
 
-### 4.4 Measure and govern
+### 4.4 Run the service
+- Inspect `samples/whatsup-logistics/run/` for the production runbook and live incident plan powered by the new `run.service_runbook` and `run.incident_response` skills.
+- Copy SLIs/SLOs, escalation paths, and WhatsApp-ready communication templates directly into your own on-call documentation.
+- Pair these outputs with `optimization.postmortem` to close the loop on reliability learnings.
+
+### 4.5 Measure and govern
 - Inspect `samples/whatsup-logistics/optimization/` and `samples/whatsup-logistics/governance/` for experiment briefs, metric reviews, and skill release notes.
 - For provenance, open [`samples/whatsup-logistics/skill-run-log.json`](../samples/whatsup-logistics/skill-run-log.json) to trace every skill invocation, including timestamps, variables, and resulting files.
 
-### 4.5 Recreate the flow
+### 4.6 Recreate the flow
 Run the following commands to replay the case study pattern for your own product:
 
 ```bash
@@ -130,4 +135,4 @@ Check the new artifacts into Git alongside an updated run log so others can audi
 - **Update agent agreements**: Whenever a new tool joins the stack, run `delivery.agent_collaboration` again so local IDE and cloud agents share expectations.
 - **Celebrate releases**: Document major skill catalog updates using `governance.skill_release` and announce them via internal channels, linking back to this field guide for context.
 
-Your organization now has a repeatable, auditable way to pair human expertise with Claude Skills across discovery, definition, delivery, optimization, and governance. Share this guide widely and keep iterating as your catalog evolves.
+Your organization now has a repeatable, auditable way to pair human expertise with Claude Skills across discovery, definition, delivery, run, optimization, and governance. Share this guide widely and keep iterating as your catalog evolves.

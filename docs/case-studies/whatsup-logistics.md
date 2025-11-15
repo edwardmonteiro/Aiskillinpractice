@@ -39,6 +39,8 @@ The scenario demonstrates how every skill in `skills/` contributes to a cohesive
 | Delivery | `delivery.test_plan` | [`delivery/test_plan.md`](../../samples/whatsup-logistics/delivery/test_plan.md) | Manual and automated validation plan.
 | Delivery | `delivery.release_notes` | [`delivery/release_notes.md`](../../samples/whatsup-logistics/delivery/release_notes.md) | Launch comms for pilot with Rio de Janeiro couriers.
 | Delivery | `delivery.mcp_session` | [`delivery/mcp_session.md`](../../samples/whatsup-logistics/delivery/mcp_session.md) | MCP connection summary bridging Windsurf, Claude Desktop, and Devin.
+| Run | `run.service_runbook` | [`run/service_runbook.md`](../../samples/whatsup-logistics/run/service_runbook.md) | Production runbook with SLIs/SLOs, SOPs, and WhatsApp-ready comms. |
+| Run | `run.incident_response` | [`run/incident_response.md`](../../samples/whatsup-logistics/run/incident_response.md) | Live incident coordination plan for outage WU-245. |
 | Optimization | `optimization.metric_review` | [`optimization/metric_review.md`](../../samples/whatsup-logistics/optimization/metric_review.md) | Weekly metrics digest for delivery performance.
 | Optimization | `optimization.quality_report` | [`optimization/quality_report.md`](../../samples/whatsup-logistics/optimization/quality_report.md) | Quality checks for data accuracy and WhatsApp response times.
 | Optimization | `optimization.experiment_brief` | [`optimization/experiment_brief.md`](../../samples/whatsup-logistics/optimization/experiment_brief.md) | Experiment to compare proactive vs. reactive driver nudges.

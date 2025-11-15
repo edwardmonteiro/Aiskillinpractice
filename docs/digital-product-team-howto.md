@@ -39,7 +39,7 @@ codex run --skill delivery.roadmap --output docs/roadmap.md
 
 Follow the WhatsApp-native logistics sample included in this repository to see the lifecycle in action:
 
-- **Artifacts**: Explore `samples/whatsup-logistics/` for discovery through governance outputs created by every skill.
+- **Artifacts**: Explore `samples/whatsup-logistics/` for discovery through run + governance outputs created by every skill.
 - **Design Doc**: Review [`specs/projects/whatsup-logistics/sdd.md`](../specs/projects/whatsup-logistics/sdd.md) for the AI-first SDD referenced by local IDE (Windsurf) and cloud (Devin) agents.
 - **Run Log**: Check [`samples/whatsup-logistics/skill-run-log.json`](../samples/whatsup-logistics/skill-run-log.json) to understand which agent executed each skill, the variables provided, and resulting files.
 - **Narrative Guide**: Share [`docs/case-studies/whatsup-logistics.md`](case-studies/whatsup-logistics.md) internally as a playbook for WhatsApp-based delivery services in Brazil.
@@ -53,6 +53,7 @@ Follow the WhatsApp-native logistics sample included in this repository to see t
 | Discovery | Understand users, market, and problem space. | `discovery.user_research`, `discovery.market_scan`, `discovery.problem_framing` |
 | Definition | Shape product strategy, define scope, and align stakeholders. | `definition.value_proposition`, `definition.story_map`, `definition.okr_drafting` |
 | Delivery | Build, validate, and release the product increment. | `delivery.tech_spec`, `delivery.test_plan`, `delivery.release_notes` |
+| Run | Keep the service healthy after launch with shared runbooks and calm incident coordination. | `run.service_runbook`, `run.incident_response` |
 | Optimization | Monitor outcomes, refine features, and capture learnings. | `optimization.experiment_brief`, `optimization.metric_review`, `optimization.retrospective` |
 | Governance | Coordinate cross-team releases of the skills catalog. | `governance.skill_release` |
 
@@ -226,6 +227,32 @@ Each phase bundles role-specific skills. The sections below outline responsibili
 
 ---
 
+### 3.6 Site Reliability & RunOps
+
+**Run**
+- Skill: `run.service_runbook`
+- Command:
+  ```bash
+  codex skills run run.service_runbook \
+    --vars "service_name=WhatsUp Logistics" \
+           "customer_promises=WhatsApp location freshness <5s" \
+           "runtime_context=FastAPI control plane, Redis, WhatsApp Cloud API"
+  ```
+- Output: Production-ready runbook with SLIs/SLOs, on-call rotations, SOPs, and communication templates you can drop directly into the WhatsUp Logistics `run/` workspace.
+
+**Incident response**
+- Skill: `run.incident_response`
+- Workflow:
+  1. Page on-call via PagerDuty or WhatsApp war room.
+  2. Run the skill to capture timeline, investigation steps, and customer messaging.
+  3. Save the output under `samples/<initiative>/run/incident_<id>.md` so the follow-up postmortem has a clean source of truth.
+
+**Optimization (closing the loop)**
+- Skill: `optimization.postmortem`
+- After the incident plan stabilizes, transition straight into `optimization.postmortem` using the captured notes to accelerate learning and backlog creation.
+
+---
+
 ## 4. Implementation Blueprint
 
 1. **Bootstrap the enumerator script**
@@ -312,6 +339,8 @@ Modern delivery teams often blend on-device copilots (for example, Windsurf in V
 | Delivery | Design Review | Product Designer, Design Lead | `skills/delivery/design_review/SKILL.md` |
 | Delivery | Roadmap | Product Manager, Program Manager | `skills/delivery/roadmap/SKILL.md` |
 | Delivery | Dashboard Brief | Data Analyst, Product Designer | `skills/delivery/dashboard_brief/SKILL.md` |
+| Run | Service Runbook | Site Reliability Lead, On-call Engineer | `skills/run/service_runbook/SKILL.md` |
+| Run | Incident Response | Incident Commander, Support Lead | `skills/run/incident_response/SKILL.md` |
 | Governance | Skill Release | Skills Maintainer, Chapter Lead | `skills/governance/skill_release/SKILL.md` |
 | Optimization | Experiment Brief | Product Designer, Product Manager | `skills/optimization/experiment_brief/SKILL.md` |
 | Optimization | Metric Review | Product Manager, Analytics Lead | `skills/optimization/metric_review/SKILL.md` |
