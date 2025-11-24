@@ -30,6 +30,10 @@ The scenario demonstrates how every skill in `skills/` contributes to a cohesive
 | Definition | `definition.okr_drafting` | [`definition/okr_drafting.md`](../../samples/whatsup-logistics/definition/okr_drafting.md) | OKRs for Q1 WhatsApp automation rollout.
 | Definition | `definition.tech_spike` | [`definition/tech_spike.md`](../../samples/whatsup-logistics/definition/tech_spike.md) | Experiment comparing location streaming strategies.
 | Definition | `definition.test_strategy` | [`definition/test_strategy.md`](../../samples/whatsup-logistics/definition/test_strategy.md) | Hybrid testing approach covering WhatsApp flows and GPS services.
+| Data | `data.analytics_engineer` | [`data/analytics_engineer.md`](../../samples/whatsup-logistics/data/analytics_engineer.md) | Pipeline and contract for WhatsApp events + GPS marts.
+| Data | `data.data_scientist` | [`data/data_scientist.md`](../../samples/whatsup-logistics/data/data_scientist.md) | Exploration and feature plan for stall prediction.
+| Data | `data.ml_engineer` | [`data/ml_engineer.md`](../../samples/whatsup-logistics/data/ml_engineer.md) | Production rollout plan for stall scoring service.
+| Data | `data.business_analyst` | [`data/business_analyst.md`](../../samples/whatsup-logistics/data/business_analyst.md) | Decision brief balancing rider experience with on-time performance.
 | Delivery | `delivery.agent_collaboration` | [`delivery/agent_collaboration.md`](../../samples/whatsup-logistics/delivery/agent_collaboration.md) | Handshake protocol between Windsurf and Devin agents.
 | Delivery | `delivery.ai_delivery_sdd` | [`../../specs/projects/whatsup-logistics/sdd.md`](../../specs/projects/whatsup-logistics/sdd.md) | AI-first software design document for the WhatsApp driver tracker.
 | Delivery | `delivery.dashboard_brief` | [`delivery/dashboard_brief.md`](../../samples/whatsup-logistics/delivery/dashboard_brief.md) | Requirements for dispatcher monitoring dashboard.

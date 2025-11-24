@@ -205,6 +205,55 @@ Each phase bundles role-specific skills. The sections below outline responsibili
 
 ### 3.5 Data & Analytics
 
+**Analytics Engineer**
+- Skill: `data.analytics_engineer`
+- Command:
+  ```bash
+  codex skills run data.analytics_engineer \
+    --vars "initiative=WhatsUp Logistics" \
+           "sources=WhatsApp webhooks,Kinesis GPS" \
+           "consumers=Ops dashboard,ML features" \
+           "latency_slo=<5m"
+  ```
+- Output: Dataset contract, dbt layering plan, and rollout steps (see `samples/whatsup-logistics/data/analytics_engineer.md`).
+
+**Data Scientist**
+- Skill: `data.data_scientist`
+- Use with notebook attachments or CSV excerpts:
+  ```bash
+  codex skills run data.data_scientist \
+    --vars "objective=Reduce late deliveries" \
+           "target_metric=P90 lateness" \
+           "datasets=fct_delivery_status,driver_locations_stream" \
+           "candidate_models=GBM,Rule-based baseline"
+  ```
+- Output: Problem framing, feature plan, evaluation approach, and deployment recommendations (see `samples/whatsup-logistics/data/data_scientist.md`).
+
+**Machine Learning Engineer**
+- Skill: `data.ml_engineer`
+- Command:
+  ```bash
+  codex skills run data.ml_engineer \
+    --vars "model_name=Stall detection v0.3" \
+           "runtime_target=Scala service" \
+           "interfaces=grpc ScoreRequest/ScoreResponse" \
+           "performance_slo=p95<80ms" \
+           "rollout_strategy=Shadow then canary"
+  ```
+- Output: Production architecture, rollout, and observability plan (see `samples/whatsup-logistics/data/ml_engineer.md`).
+
+**Business Analyst**
+- Skill: `data.business_analyst`
+- Command:
+  ```bash
+  codex skills run data.business_analyst \
+    --vars "question=How to cut late deliveries without rider churn?" \
+           "stakeholders=Ops,Support,Finance" \
+           "timeframe=Q3 pilot" \
+           "success_metric=On-time + rider CSAT"
+  ```
+- Output: Decision brief, experiment design, and follow-up tasks (see `samples/whatsup-logistics/data/business_analyst.md`).
+
 **Discovery**
 - Skill: `discovery.data_audit`
 - Output: Inventory of available datasets and instrumentation gaps.
@@ -331,6 +380,10 @@ Modern delivery teams often blend on-device copilots (for example, Windsurf in V
 | Definition | Tech Spike | Engineering Lead, Staff Engineer | `skills/definition/tech_spike/SKILL.md` |
 | Definition | Test Strategy | QA Lead, Test Engineer | `skills/definition/test_strategy/SKILL.md` |
 | Definition | Metric Catalog | Data Analyst, Product Manager | `skills/definition/metric_catalog/SKILL.md` |
+| Data | Analytics Engineer | Analytics Engineer, Data Platform | `skills/data/analytics_engineer/SKILL.md` |
+| Data | Data Scientist | Data Scientist, Applied Scientist | `skills/data/data_scientist/SKILL.md` |
+| Data | Machine Learning Engineer | ML Engineer, Platform Engineer | `skills/data/ml_engineer/SKILL.md` |
+| Data | Business Analyst | Business Analyst, Strategy Lead | `skills/data/business_analyst/SKILL.md` |
 | Delivery | Tech Spec | Engineering Lead, Feature Team Engineer | `skills/delivery/tech_spec/SKILL.md` |
 | Delivery | AI Delivery SDD | Feature Team Engineer, Tech Lead | `skills/delivery/ai_delivery_sdd/SKILL.md` |
 | Delivery | Agent Collaboration | Feature Team Engineer, AI Pair Programmer | `skills/delivery/agent_collaboration/SKILL.md` |
