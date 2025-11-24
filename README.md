@@ -5,6 +5,7 @@ Make Claude Skills first-class citizens in Codex CLI (and any other agent) with 
 ## Repository layout
 
 - [`docs/repository-field-guide.md`](docs/repository-field-guide.md) — step-by-step tour that orients new teams to the repo, skills catalog, and WhatsUp Logistics sample workspace.
+- [`docs/ai-native-team-topology.md`](docs/ai-native-team-topology.md) — AI-native team composition, pod templates, and skill-to-role mapping aligned to the OpenAI engineering playbook.
 - [`docs/digital-product-team-howto.md`](docs/digital-product-team-howto.md) — end-to-end implementation guidance for digital product teams adopting Claude Skills.
 - [`docs/mcp-integration-guide.md`](docs/mcp-integration-guide.md) — walkthrough for wiring the sample MCP servers into Claude Desktop, Windsurf, Devin, and other agents.
 - [`scripts/list-skills`](scripts/list-skills) — standalone enumerator that emits a JSON array of skills by reading each `SKILL.md` front matter.

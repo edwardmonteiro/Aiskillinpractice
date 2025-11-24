@@ -18,6 +18,12 @@ const DOCUMENTS = [
     downloadLabel: 'Download Playbook Markdown'
   },
   {
+    id: 'ai-topology',
+    label: 'AI-native team topology',
+    path: '../docs/ai-native-team-topology.md',
+    downloadLabel: 'Download AI Team Topology Markdown'
+  },
+  {
     id: 'whatsup',
     label: 'WhatsUp Logistics case study',
     path: '../docs/case-studies/whatsup-logistics.md',
