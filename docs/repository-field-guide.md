@@ -24,7 +24,7 @@ Everything in this repo revolves around a single source of truth—the `skills/`
 
 | Path | Contents | How to use it |
 | --- | --- | --- |
-| `skills/` | Lifecycle-organized Claude Skills (`discovery`, `definition`, `delivery`, `data`, `run`, `optimization`, `governance`) with one `SKILL.md` per skill. | Treat each `SKILL.md` like executable documentation. Update metadata first, then body. Keep changes versioned with Git branches and pull requests, and maintain the `Toolchain & Integrations`, `Human Layer`, and `Critical Thinking Loop` sections so collaborators know which scripts, mindsets, and adaptive moves accompany the prompt. |
+| `skills/` | Lifecycle-organized Claude Skills (`consulting`, `discovery`, `definition`, `delivery`, `data`, `run`, `optimization`, `governance`) with one `SKILL.md` per skill. | Treat each `SKILL.md` like executable documentation. Update metadata first, then body. Keep changes versioned with Git branches and pull requests, and maintain the `Toolchain & Integrations`, `Human Layer`, and `Critical Thinking Loop` sections so collaborators know which scripts, mindsets, and adaptive moves accompany the prompt. |
 | `scripts/list-skills` | Enumerator script that agents run at startup to list skills without reading every file. | Copy onto your PATH, run it in CI, and pin to releases when the catalog evolves.
 | `scripts/validate-skills` & `scripts/_skills_utils.py` | Validation CLI plus helpers that enforce naming, directory alignment, and metadata structure. | Add to pre-commit hooks and CI pipelines. Block merges that fail validation.
 | `docs/ai-native-team-topology.md` | Team composition, pod templates, and skill-to-role mapping inspired by OpenAI's AI-native engineering guidance. | Use when forming a squad or splitting into pods so humans, agents, and skills line up from kickoff.
@@ -61,6 +61,10 @@ Everything in this repo revolves around a single source of truth—the `skills/`
 ## 4. WhatsUp Logistics walkthrough
 
 Use the WhatsApp-native delivery tracker as a working example of every skill in motion.
+
+### 4.0 Frame the engagement with consulting skills
+- Start in `samples/whatsup-logistics/consulting/` to see how Edwards-style SCQA, MECE trees, external/internal analyses, and strategy shortlists anchor the project before product discovery begins.
+- Mirror the sequence with `consulting.problem_structuring`, `consulting.external_analysis`, `consulting.internal_analysis`, `consulting.strategy_prioritization`, and `consulting.execution_comms` before handing off to discovery/definition tracks.
 
 ### 4.1 Start with discovery
 - Browse `samples/whatsup-logistics/discovery/` for artifacts created by the discovery skill suite. Each Markdown file mirrors the default `SKILL.md` output structure.

@@ -50,6 +50,7 @@ Follow the WhatsApp-native logistics sample included in this repository to see t
 
 | Phase | Objective | Key Claude Skill Collections |
 | --- | --- | --- |
+| Consulting | Frame the engagement, analyze the market, and prioritize plays with Edwards-style consulting workflows. | `consulting.problem_structuring`, `consulting.external_analysis`, `consulting.internal_analysis`, `consulting.strategy_prioritization`, `consulting.execution_comms` |
 | Discovery | Understand users, market, and problem space. | `discovery.user_research`, `discovery.market_scan`, `discovery.problem_framing` |
 | Definition | Shape product strategy, define scope, and align stakeholders. | `definition.value_proposition`, `definition.story_map`, `definition.okr_drafting` |
 | Delivery | Build, validate, and release the product increment. | `delivery.tech_spec`, `delivery.test_plan`, `delivery.release_notes` |
@@ -299,6 +300,30 @@ Each phase bundles role-specific skills. The sections below outline responsibili
 **Optimization (closing the loop)**
 - Skill: `optimization.postmortem`
 - After the incident plan stabilizes, transition straight into `optimization.postmortem` using the captured notes to accelerate learning and backlog creation.
+
+---
+
+### 3.7 Edwards Consulting Pod (Principals, Engagement Managers, Associates)
+
+**Frame the engagement**
+- Skill: `consulting.problem_structuring`
+- Command:
+  ```bash
+  codex skills run consulting.problem_structuring \
+    --vars "client_context=WhatsUp Logistics Brazil" \
+           "trigger=SLA breaches in São Paulo" \
+           "hypotheses=Routing quality + supply depth" \
+           "decision_date=2025-05-12"
+  ```
+- Output: SCQA narrative, MECE issue tree, and engagement backbone you can re-use in steerco pre-reads.
+
+**Analyze the landscape**
+- Skills: `consulting.external_analysis`, `consulting.internal_analysis`
+- Pair PESTLE/Five Forces with SWOT, value chain, and KPI trees to build a fact pack before strategy optioning. See `samples/whatsup-logistics/consulting/` for ready-made examples.
+
+**Prioritize and communicate**
+- Skill: `consulting.strategy_prioritization` followed by `consulting.execution_comms`
+- Combine Ansoff/BCG/ICE scoring with Pyramid Principle messaging and OKRs to hand the shortlist to product and engineering leads.
 
 ---
 
