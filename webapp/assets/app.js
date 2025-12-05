@@ -34,6 +34,12 @@ const DOCUMENTS = [
     label: 'MCP integration guide',
     path: '../docs/mcp-integration-guide.md',
     downloadLabel: 'Download MCP Guide Markdown'
+  },
+  {
+    id: 'functional-architecture',
+    label: 'Functional skill architecture',
+    path: '../docs/functional-skill-architecture.md',
+    downloadLabel: 'Download Functional Architecture Markdown'
   }
 ];
 

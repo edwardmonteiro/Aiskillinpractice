@@ -13,6 +13,7 @@ This guide shows how a modern product organization can integrate Claude Skills i
 | Claude API access | Claude 3 or newer with API key stored in your environment. |
 | Codex CLI | Install via `npm install -g @codex/cli` or follow your team's CLI setup. |
 | Claude Skills enumerator | Copy [`scripts/list-skills`](../scripts/list-skills) onto your PATH so agents can enumerate skills consistently across repositories. |
+| Functional skill architecture | Read [`docs/functional-skill-architecture.md`](functional-skill-architecture.md) to design skills as pure, composable functions with explicit inputs/outputs. |
 | Skill definitions | Store reusable prompt snippets in `skills/<phase>/<skill>/SKILL.md` to align with Codex CLI expectations. |
 | Skills quality gate | Run [`scripts/validate-skills`](../scripts/validate-skills) locally and in CI to guarantee metadata quality as the catalog scales. |
 | MCP sample servers | Wire [`mcp/servers/*`](../mcp/README.md) into MCP-aware agents so Claude Skills stream directly into Windsurf, Claude Desktop, Devin, and beyond. |
@@ -52,8 +53,10 @@ Follow the WhatsApp-native logistics sample included in this repository to see t
 | --- | --- | --- |
 | Consulting | Frame the engagement, analyze the market, and prioritize plays with Edwards-style consulting workflows. | `consulting.problem_structuring`, `consulting.external_analysis`, `consulting.internal_analysis`, `consulting.strategy_prioritization`, `consulting.execution_comms` |
 | Discovery | Understand users, market, and problem space. | `discovery.user_research`, `discovery.market_scan`, `discovery.problem_framing` |
+| Design | Translate CX guardrails into flows, research plans, and copy that respect channel constraints. | `design.cx_lead`, `design.ux_research`, `design.product_designer` |
 | Definition | Shape product strategy, define scope, and align stakeholders. | `definition.value_proposition`, `definition.story_map`, `definition.okr_drafting` |
 | Delivery | Build, validate, and release the product increment. | `delivery.tech_spec`, `delivery.test_plan`, `delivery.release_notes` |
+| Data | Operationalize signals, models, and platforms for analytics and ML. | `data.data_engineer`, `data.data_scientist`, `data.data_science_engineer`, `data.ml_platform_engineer` |
 | Run | Keep the service healthy after launch with shared runbooks and calm incident coordination. | `run.service_runbook`, `run.incident_response` |
 | Optimization | Monitor outcomes, refine features, and capture learnings. | `optimization.experiment_brief`, `optimization.metric_review`, `optimization.retrospective` |
 | Governance | Coordinate cross-team releases of the skills catalog. | `governance.skill_release` |
