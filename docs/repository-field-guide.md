@@ -24,7 +24,7 @@ Everything in this repo revolves around a single source of truth—the `skills/`
 
 | Path | Contents | How to use it |
 | --- | --- | --- |
-| `skills/` | Lifecycle-organized Claude Skills (`consulting`, `design`, `discovery`, `definition`, `delivery`, `data`, `run`, `optimization`, `governance`) with one `SKILL.md` per skill. | Treat each `SKILL.md` like executable documentation. Update metadata first, then body. Keep changes versioned with Git branches and pull requests, and maintain the `Toolchain & Integrations`, `Human Layer`, and `Critical Thinking Loop` sections so collaborators know which scripts, mindsets, and adaptive moves accompany the prompt. |
+| `skills/` | Lifecycle-organized Claude Skills (`consulting`, `design`, `discovery`, `definition`, `delivery`, `data`, `sales`, `run`, `optimization`, `governance`) with one `SKILL.md` per skill. | Treat each `SKILL.md` like executable documentation. Update metadata first, then body. Keep changes versioned with Git branches and pull requests, and maintain the `Toolchain & Integrations`, `Human Layer`, and `Critical Thinking Loop` sections so collaborators know which scripts, mindsets, and adaptive moves accompany the prompt. |
 | `scripts/list-skills` | Enumerator script that agents run at startup to list skills without reading every file. | Copy onto your PATH, run it in CI, and pin to releases when the catalog evolves.
 | `scripts/validate-skills` & `scripts/_skills_utils.py` | Validation CLI plus helpers that enforce naming, directory alignment, and metadata structure. | Add to pre-commit hooks and CI pipelines. Block merges that fail validation.
 | `docs/ai-native-team-topology.md` | Team composition, pod templates, and skill-to-role mapping inspired by OpenAI's AI-native engineering guidance. | Use when forming a squad or splitting into pods so humans, agents, and skills line up from kickoff.
@@ -88,16 +88,20 @@ Use the WhatsApp-native delivery tracker as a working example of every skill in 
 - Explore `samples/whatsup-logistics/data/` for analytics engineering, data science, data science engineering, data engineering, and ML platform briefs.
 - Use `data.data_engineer`, `data.data_science_engineer`, and `data.ml_platform_engineer` to move from prototype notebooks to productionized services while keeping run/incident skills in sync.
 
-### 4.6 Run the service
+### 4.6 Support sales back-office operations
+- Review `samples/whatsup-logistics/sales/` to see pipeline hygiene, deal-desk reviews, renewal runbooks, and enablement feedback loops tailored for the WhatsApp-native business.
+- Pair artifacts with `sales.pipeline_hygiene`, `sales.deal_desk_review`, `sales.renewals_runbook`, and `sales.enablement_feedback` to keep CRM hygiene, approvals, renewals, and enablement content synchronized.
+
+### 4.7 Run the service
 - Inspect `samples/whatsup-logistics/run/` for the production runbook and live incident plan powered by the new `run.service_runbook` and `run.incident_response` skills.
 - Copy SLIs/SLOs, escalation paths, and WhatsApp-ready communication templates directly into your own on-call documentation.
 - Pair these outputs with `optimization.postmortem` to close the loop on reliability learnings.
 
-### 4.7 Measure and govern
+### 4.8 Measure and govern
 - Inspect `samples/whatsup-logistics/optimization/` and `samples/whatsup-logistics/governance/` for experiment briefs, metric reviews, and skill release notes.
 - For provenance, open [`samples/whatsup-logistics/skill-run-log.json`](../samples/whatsup-logistics/skill-run-log.json) to trace every skill invocation, including timestamps, variables, and resulting files.
 
-### 4.8 Recreate the flow
+### 4.9 Recreate the flow
 Run the following commands to replay the case study pattern for your own product:
 
 ```bash
