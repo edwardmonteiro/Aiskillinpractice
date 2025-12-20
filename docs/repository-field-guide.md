@@ -8,6 +8,7 @@ Welcome to your AI-first delivery workspace. This field guide shows product and 
 
 | Step | Why it matters | Command or link |
 | --- | --- | --- |
+| 0. Skim the Agent Skills Overview | Aligns everyone on the pattern for discovery, execution, and governance. | [`docs/agent-skills-overview.md`](agent-skills-overview.md)
 | 1. Install the enumerator | Gives every agent (local or cloud) the same view of the catalog. | `chmod +x scripts/list-skills && cp scripts/list-skills ~/bin/`
 | 2. Validate the catalog | Catches metadata drift before skills reach teammates. | `scripts/validate-skills`
 | 3. Point Codex (or your agent) at the repo | Ensures Codex, Windsurf, Devin, or any other assistant reads the same skills. | Configure `skillsEnumerator` to use `~/bin/list-skills` and `skillsDir` to point at this repo.
@@ -24,6 +25,7 @@ Everything in this repo revolves around a single source of truth—the `skills/`
 
 | Path | Contents | How to use it |
 | --- | --- | --- |
+| `docs/agent-skills-overview.md` | Top-level pattern for discovering, composing, validating, and governing skills. | Read first when onboarding new contributors or agents so the rest of the guides land in the right order. |
 | `skills/` | Lifecycle-organized Claude Skills (`consulting`, `design`, `discovery`, `definition`, `delivery`, `data`, `sales`, `run`, `optimization`, `governance`) with one `SKILL.md` per skill. | Treat each `SKILL.md` like executable documentation. Update metadata first, then body. Keep changes versioned with Git branches and pull requests, and maintain the `Toolchain & Integrations`, `Human Layer`, and `Critical Thinking Loop` sections so collaborators know which scripts, mindsets, and adaptive moves accompany the prompt. |
 | `scripts/list-skills` | Enumerator script that agents run at startup to list skills without reading every file. | Copy onto your PATH, run it in CI, and pin to releases when the catalog evolves.
 | `scripts/validate-skills` & `scripts/_skills_utils.py` | Validation CLI plus helpers that enforce naming, directory alignment, and metadata structure. | Add to pre-commit hooks and CI pipelines. Block merges that fail validation.

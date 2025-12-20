@@ -4,6 +4,7 @@ Make Claude Skills first-class citizens in Codex CLI (and any other agent) with 
 
 ## Repository layout
 
+- [`docs/agent-skills-overview.md`](docs/agent-skills-overview.md) — the concise pattern for discovering, composing, and governing skills across every phase and domain.
 - [`docs/repository-field-guide.md`](docs/repository-field-guide.md) — step-by-step tour that orients new teams to the repo, skills catalog, and WhatsUp Logistics sample workspace.
 - [`docs/ai-native-team-topology.md`](docs/ai-native-team-topology.md) — AI-native team composition, pod templates, and skill-to-role mapping aligned to the OpenAI engineering playbook.
 - [`docs/digital-product-team-howto.md`](docs/digital-product-team-howto.md) — end-to-end implementation guidance for digital product teams adopting Claude Skills.
@@ -22,6 +23,8 @@ Make Claude Skills first-class citizens in Codex CLI (and any other agent) with 
 - [`webapp/`](webapp) — lightweight site that renders the full implementation guide with navigation, search, and download actions for sharing across the company.
 
 ## Getting started
+
+Begin with [`docs/agent-skills-overview.md`](docs/agent-skills-overview.md) to understand the end-to-end pattern before diving into the detailed guides below.
 
 1. **Install the enumerator**
    ```bash

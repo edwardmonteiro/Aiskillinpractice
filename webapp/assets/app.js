@@ -12,6 +12,12 @@ const DOCUMENTS = [
     downloadLabel: 'Download Field Guide Markdown'
   },
   {
+    id: 'agent-overview',
+    label: 'Agent skills overview',
+    path: '../docs/agent-skills-overview.md',
+    downloadLabel: 'Download Agent Skills Overview Markdown'
+  },
+  {
     id: 'howto',
     label: 'Implementation playbook',
     path: '../docs/digital-product-team-howto.md',

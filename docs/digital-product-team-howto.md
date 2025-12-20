@@ -1,6 +1,6 @@
 # Claude Skills Playbook for Digital Product Teams
 
-This guide shows how a modern product organization can integrate Claude Skills into their day-to-day workflows. It builds on the enumerator concept described in [Robert Glaser's blog post on Claude Skills in Codex CLI](https://www.robert-glaser.de/claude-skills-in-codex-cli/) and adapts it for a full product delivery lifecycle. If you need a quick orientation first, start with the [Claude Skills Repository Field Guide](repository-field-guide.md) and return here for deeper, role-specific detail.
+This guide shows how a modern product organization can integrate Claude Skills into their day-to-day workflows. It builds on the enumerator concept described in [Robert Glaser's blog post on Claude Skills in Codex CLI](https://www.robert-glaser.de/claude-skills-in-codex-cli/) and adapts it for a full product delivery lifecycle. If you need a quick orientation first, start with the [Agent Skills Overview Pattern](agent-skills-overview.md) and [Claude Skills Repository Field Guide](repository-field-guide.md), then return here for deeper, role-specific detail.
 
 ---
 
